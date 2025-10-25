@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Crawl-delay (seconds) - optional
+# Crawl-delay: 10
+
+Sitemap: https://yourusername.github.io/data-science-portfolio/sitemap.xml
