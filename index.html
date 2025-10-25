@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aziz Messaoud | Data Science Engineer | AI & Machine Learning</title>
+    <meta name="description" content="Portfolio of Aziz Messaoud, Data Science Engineering student at ESPRIT, passionate about AI, Machine Learning, and solving complex problems with data.">
+    <meta name="keywords" content="data science, machine learning, AI, Tunisia, ESPRIT, portfolio, software engineer">
+    <!-- Open Graph / Social sharing -->
+    <meta property="og:title" content="Aziz Messaoud — Data Science Engineer" />
+    <meta property="og:description" content="Portfolio of Aziz Messaoud — AI, Machine Learning, and Data Science projects and experience." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://azizm.me/" />
+    <meta property="og:image" content="assets/images/profile.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@your_twitter_handle" />
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Aziz Messaoud",
+      "jobTitle": "Data Science Engineering Student",
+      "url": "http://azizm.me/",
+      "sameAs": [
+        "https://linkedin.com/in/azizmessaoud",
+        "https://github.com/azizmessaoud",
+        "https://medium.com/@aziz.messaoud"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "ESPRIT"
+      },
+      "knowsAbout": ["Data Science", "Machine Learning", "AI", "Python", "Deep Learning"]
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"></noscript>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="logo">AM</div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home">AM</a>
+            </div>
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#volunteering">Volunteering</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="assets/cv/Aziz_Messaoud_CV-1.pdf" class="btn btn-primary nav-cta" target="_blank">Download CV</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main id="main-content" role="main">
+    <section id="home" class="hero">
+        <canvas id="particleCanvas" class="particle-canvas"></canvas>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Hi, I'm <span class="highlight">Aziz Messaoud</span></h1>
+                    <div class="typed-text">
+                        <span class="typed-cursor">Data Science Engineer</span>
+                    </div>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Nabeul, Tunisia</p>
+                    <p class="tagline">🚀 Transforming data into actionable insights through AI & Machine Learning</p>
+                    <p class="value-prop">I help organizations unlock the power of data science to make smarter decisions, optimize operations, and drive growth.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+                        <a href="assets/cv/Aziz_Messaoud_CV-1.pdf" class="btn btn-outline" target="_blank">Download CV</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="profile-container">
+                        <img src="assets/images/profile.jpg" alt="Aziz Messaoud" class="profile-image">
+                        <div class="profile-glow"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/azizmessaoud" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/azizmessaoud" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://medium.com/@aziz.messaoud" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
+                <a href="mailto:aziz.messaoud@esprit.tn" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <p>Scroll Down</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p>Get to know me better</p>
+            </div>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-illustration">
+                        <i class="fas fa-code"></i>
+                        <div class="floating-elements">
+                            <div class="floating-element python"><i class="fab fa-python"></i></div>
+                            <div class="floating-element ai"><i class="fas fa-brain"></i></div>
+                            <div class="floating-element data"><i class="fas fa-chart-line"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>As a motivated Data Science Engineering student at ESPRIT, I am passionate about leveraging the power of data and AI to solve complex problems. With a solid foundation in programming languages like Python, C++, and Java, along with growing expertise in Machine Learning and Deep Learning, I am actively seeking opportunities where I can apply my skills and continue to grow in the field.</p>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number">2027</div>
+                            <div class="stat-label">Expected Graduation</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">2+</div>
+                            <div class="stat-label">Years of Study</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Certifications</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">Internships Completed</div>
+                        </div>
+                    </div>
+                    <div class="fun-facts">
+                        <h3>Fun Facts</h3>
+                        <div class="facts-grid">
+                            <div class="fact-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Currently in 4th year at ESPRIT</span>
+                            </div>
+                            <div class="fact-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Love solving algorithmic challenges</span>
+                            </div>
+                            <div class="fact-item">
+                                <i class="fas fa-globe"></i>
+                                <span>Fluent in Arabic, French & English</span>
+                            </div>
+                            <div class="fact-item">
+                                <i class="fas fa-rocket"></i>
+                                <span>Always learning new technologies</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How I Work Section -->
+    <section id="process" class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>How I Work</h2>
+                <p>My proven approach to delivering results</p>
+            </div>
+            <div class="process-steps">
+                <div class="step" data-aos="fade-up" data-aos-delay="0">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <i class="fas fa-magnifying-glass"></i>
+                    </div>
+                    <h3>Discovery & Analysis</h3>
+                    <p>Understand your goals, data landscape, and challenges. I conduct thorough exploratory analysis to identify opportunities and define clear objectives.</p>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Design & Development</h3>
+                    <p>Build robust ML models and data pipelines. I create scalable, maintainable solutions tailored to your specific requirements and constraints.</p>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Testing & Optimization</h3>
+                    <p>Validate performance rigorously. I ensure accuracy, efficiency, and reliability through comprehensive testing and continuous optimization.</p>
+                </div>
+                <div class="step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">04</div>
+                    <div class="step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Deployment & Support</h3>
+                    <p>Launch solutions into production and provide ongoing support. I ensure smooth integration, monitoring, and maintenance for long-term success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <p>My professional journey</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="card-header">
+                                <h3>AI Intern</h3>
+                                <span class="company">Sopra HR Software</span>
+                                <span class="duration">July 2025 - August 2025 (2 months)</span>
+                                <span class="location">Tunisia</span>
+                            </div>
+                            <p class="description">Working on AI-powered HR solutions, implementing machine learning models, and contributing to data-driven decision-making processes.</p>
+                            <div class="tech-tags">
+                                <span>Python</span>
+                                <span>Machine Learning</span>
+                                <span>AI</span>
+                                <span>Data Analysis</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="timeline-card">
+                            <div class="card-header">
+                                <h3>IT Maintenance Intern</h3>
+                                <span class="company">Banque de Tunisie</span>
+                                <span class="duration">June 2023 (1 month)</span>
+                                <span class="location">Tunis, Tunisia</span>
+                            </div>
+                            <p class="description">Gained hands-on experience in IT maintenance, diagnosed and resolved IT issues, installed hardware (printers, PCs, scanners), deployed Windows using SCCM, and managed hardware inventory.</p>
+                            <div class="tech-tags">
+                                <span>IT Support</span>
+                                <span>Hardware</span>
+                                <span>Windows</span>
+                                <span>SCCM</span>
+                                <span>Excel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Projects</h2>
+                <p>My recent work and contributions</p>
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web-development">Academic Projects</button>
+                <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+            </div>
+            <div class="projects-grid">
+                <!-- InnoTravel (group project) -->
+                <div class="project-card" data-category="web-development">
+                    <div class="project-image">
+                        <div class="project-icon"><i class="fab fa-github fa-4x" aria-hidden="true"></i></div>
+                        <div class="project-overlay" aria-hidden="true">
+                            <div class="overlay-content">
+                                <h3>InnoTravel</h3>
+                                <p>Group project (6 members, ESPRIT College) — Multi-platform travel management system built with Java and JavaFX.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/oumaymasaddouri/InnoTravel-PiDev-Symfony.git" class="btn btn-primary" target="_blank" rel="noopener">View Repository <i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>InnoTravel</h3>
+                        <p>Group project — ESPRIT College (6 members)</p>
+                        <div class="tech-tags">
+                            <span>JavaFX</span>
+                            <span>Java</span>
+                            <span>Full-stack</span>
+                        </div>
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                </div>
+
+                <!-- Smart Nautical Sports Club (group project) -->
+                <div class="project-card" data-category="web-development">
+                    <div class="project-image">
+                        <div class="project-icon"><i class="fas fa-ship fa-4x" aria-hidden="true"></i></div>
+                        <div class="project-overlay" aria-hidden="true">
+                            <div class="overlay-content">
+                                <h3>Smart Nautical Sports Club</h3>
+                                <p>Group project (6 members, ESPRIT College) — Qt/C++ desktop management system for club operations.</p>
+                                <div class="project-links">
+                                    <a href="https://github.com/2A1-CPP-Project-23-24/2a1-smart-nautical-sports-club.git" class="btn btn-primary" target="_blank" rel="noopener">View Repository <i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Smart Nautical Sports Club</h3>
+                        <p>Group project — ESPRIT College (6 members)</p>
+                        <div class="tech-tags">
+                            <span>C++</span>
+                            <span>Qt</span>
+                            <span>Desktop</span>
+                        </div>
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                </div>
+
+                <!-- ClusterCrew Analytics (single card with two links) -->
+                <div class="project-card" data-category="machine-learning">
+                    <div class="project-image">
+                        <div class="project-icon"><i class="fas fa-chart-line fa-4x" aria-hidden="true"></i></div>
+                        <div class="project-overlay" aria-hidden="true">
+                            <div class="overlay-content">
+                                <h3>ClusterCrew Analytics</h3>
+                                <p>Interactive healthcare analytics dashboard and BI presentation. Team project, 6 members, ESPRIT College.</p>
+                                <div class="project-links">
+                                    <a href="https://clustercrew-analytics.onrender.com/overview" class="btn btn-primary">View Dashboard <i class="fas fa-chart-area"></i></a>
+                                    <a href="https://www.canva.com/design/DAG2umiwwmA/9XGhwnkapx-IqTNMT1k8Dg/edit?utm_content=DAG2umiwwmA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" class="btn btn-outline" target="_blank" rel="noopener">View Presentation <i class="fas fa-file-lines"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>ClusterCrew Analytics</h3>
+                        <p>Interactive healthcare analytics dashboard and BI presentation — Team project (6 members).</p>
+                        <div class="tech-tags">
+                            <span>PowerBI</span>
+                            <span>Data Visualization</span>
+                            <span>Analytics</span>
+                        </div>
+                        <div class="project-status completed">Completed</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Case Study Modal -->
+    <div id="projectModal" class="project-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content" id="modalContent" tabindex="-1">
+            <button class="modal-close" id="modalClose" aria-label="Close project details dialog">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Project Title</h2>
+                <div class="modal-meta">
+                    <span class="modal-status" id="modalStatus"></span>
+                    <div class="modal-tech" id="modalTech"></div>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div id="modalDetails"></div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary" id="modalGithub">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                <a href="#" class="btn btn-outline" id="modalLiveDemo">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Volunteering & Clubs Section -->
+    <section id="volunteering" class="volunteering">
+        <div class="container">
+            <div class="section-header">
+                <h2>Volunteering & Clubs</h2>
+                <p>My involvement in communities and professional organizations</p>
+            </div>
+            <div class="volunteering-grid">
+                <!-- Present club shown first -->
+                <div class="volunteering-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="volunteering-header">
+                        <div class="volunteering-icon">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                        <div class="volunteering-info">
+                            <h3>DeepFlow</h3>
+                            <p class="role">Member</p>
+                            <p class="duration"><i class="fas fa-calendar"></i> Oct 2025 - Present</p>
+                        </div>
+                    </div>
+                    <p class="volunteering-description">Recent member of DeepFlow community dedicated to deep learning and machine learning innovation. Engaging with cutting-edge research, collaborative projects, and knowledge sharing in the deep learning ecosystem.</p>
+                    <div class="volunteering-tags">
+                        <span>Deep Learning</span>
+                        <span>Machine Learning</span>
+                        <span>Research</span>
+                    </div>
+                </div>
+
+                <div class="volunteering-card" data-aos="fade-up">
+                    <div class="volunteering-header">
+                        <div class="volunteering-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="volunteering-info">
+                            <h3>ATIA Club ESB</h3>
+                            <p class="role">Member, Learning Department</p>
+                            <p class="duration"><i class="fas fa-calendar"></i> Dec 2024 - Present</p>
+                        </div>
+                    </div>
+                    <p class="volunteering-description">Contribute to the growth and dissemination of AI knowledge by organizing and participating in workshops, training sessions, and AI discussions. Collaborate to develop learning materials and foster a continuous learning environment for practical AI application.</p>
+                    <div class="volunteering-tags">
+                        <span>AI & Technology</span>
+                        <span>Workshops</span>
+                        <span>Learning</span>
+                    </div>
+                </div>
+
+                <div class="volunteering-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="volunteering-header">
+                        <div class="volunteering-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="volunteering-info">
+                            <h3>IEEE PES Chapter ESPRIT</h3>
+                            <p class="role">Member</p>
+                            <p class="duration"><i class="fas fa-calendar"></i> Oct 2022 - Dec 2023</p>
+                        </div>
+                    </div>
+                    <p class="volunteering-description">Active member of IEEE Power & Energy Society Chapter at ESPRIT Student Branch. Participated in technical events, networking sessions, and professional development activities focused on power systems and energy engineering.</p>
+                    <div class="volunteering-tags">
+                        <span>IEEE</span>
+                        <span>Engineering</span>
+                        <span>Professional</span>
+                    </div>
+                </div>
+
+                <div class="volunteering-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="volunteering-header">
+                        <div class="volunteering-icon">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                        <div class="volunteering-info">
+                            <h3>IEEE IAS Chapter ESPRIT</h3>
+                            <p class="role">Member</p>
+                            <p class="duration"><i class="fas fa-calendar"></i> Oct 2022 - Dec 2023</p>
+                        </div>
+                    </div>
+                    <p class="volunteering-description">Member of IEEE Industry Applications Society Chapter at ESPRIT. Engaged with industrial applications of engineering principles, attended technical seminars, and networked with industry professionals.</p>
+                    <div class="volunteering-tags">
+                        <span>IEEE</span>
+                        <span>Industrial</span>
+                        <span>Applications</span>
+                    </div>
+                </div>
+
+                <div class="volunteering-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="volunteering-header">
+                        <div class="volunteering-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="volunteering-info">
+                            <h3>IEEE Computer Society ESPRIT</h3>
+                            <p class="role">Member</p>
+                            <p class="duration"><i class="fas fa-calendar"></i> Oct 2022 - Dec 2023</p>
+                        </div>
+                    </div>
+                    <p class="volunteering-description">Active member of IEEE Computer Society Chapter at ESPRIT. Participated in computing-focused workshops, programming competitions, and discussions on emerging technologies in computer science.</p>
+                    <div class="volunteering-tags">
+                        <span>IEEE</span>
+                        <span>Computing</span>
+                        <span>Technology</span>
+                    </div>
+                </div>
+
+                <!-- DeepFlow moved to the top; original block removed to avoid duplication -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <div class="section-header">
+                <h2>Certifications</h2>
+                <p>My professional certifications and achievements</p>
+            </div>
+            <!-- Certification cards below. Top list removed per user request. -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="bi">Business Intelligence (BI)</button>
+                <button class="filter-btn" data-filter="deep-learning">Deep Learning</button>
+                <button class="filter-btn" data-filter="scrum">Scrum</button>
+                <button class="filter-btn" data-filter="blockchain">Blockchain</button>
+            </div>
+            <div class="certifications-grid">
+                <!-- New certification cards added -->
+                <div class="cert-card" data-platform="deep-learning">
+                    <div class="cet-front">
+                        <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                        <h3>Introduction to Transformer-Based NLP</h3>
+                        <p>NVIDIA</p>
+                        <div class="cert-badge nvidia">NVIDIA</div>
+                    </div>
+                    <div class="cert-back">
+                        <h3>Introduction to Transformer-Based NLP</h3>
+                        <p>Certificate demonstrating knowledge in transformer-based NLP techniques.</p>
+                        <div class="cert-date">Issued: 2025</div>
+                        <a href="https://learn.nvidia.com/certificates?id=_2SSDT3sQLis1uAoAh2SNA" class="cert-link" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                <div class="cert-card" data-platform="deep-learning">
+                    <div class="cert-front">
+                        <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                        <h3>Getting Started with Deep Learning</h3>
+                        <p>NVIDIA</p>
+                        <div class="cert-badge nvidia">NVIDIA</div>
+                    </div>
+                    <div class="cert-back">
+                        <h3>Getting Started with Deep Learning</h3>
+                        <p>Introductory deep learning certification from NVIDIA.</p>
+                        <div class="cert-date">Issued: 2025</div>
+                        <a href="https://learn.nvidia.com/certificates?id=eotempvJT_-jMSt2HqvJwg" class="cert-link" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                <div class="cert-card" data-platform="deep-learning">
+                    <div class="cert-front">
+                        <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                        <h3>Fundamentals of Deep Learning</h3>
+                        <p>NVIDIA</p>
+                        <div class="cert-badge nvidia">NVIDIA</div>
+                    </div>
+                    <div class="cert-back">
+                        <h3>Fundamentals of Deep Learning</h3>
+                        <p>Core concepts of deep learning and foundational techniques.</p>
+                        <div class="cert-date">Issued: 2025</div>
+                        <a href="https://learn.nvidia.com/certificates?id=ThehODKqTASFT20JoM1-4w#" class="cert-link" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-platform="scrum">
+                    <div class="cert-front">
+                        <div class="cert-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h3>Scrum Fundamentals Certified (SFC)</h3>
+                        <p>SCRUMstudy</p>
+                        <div class="cert-badge scrum">Scrum</div>
+                    </div>
+                    <div class="cert-back">
+                        <h3>Scrum Fundamentals Certified (SFC)</h3>
+                        <p>Certified in Scrum fundamentals and agile methodologies. Credential ID: 1098120. Earned August 2025. Demonstrates proficiency in Scrum framework and agile project management practices.</p>
+                        <div class="cert-date">Issued: August 2025</div>
+                            <a href="https://www.scrumstudy.com/certification/verify?type=SFC&number=1098120" class="cert-link" target="_blank" rel="noopener">View Certificate</a>
+                    </div>
+                </div>
+                <div class="cert-card" data-platform="blockchain">
+                    <div class="cert-front">
+                        <div class="cert-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h3>Hashgraph Developer</h3>
+                        <p>The Hashgraph Association</p>
+                        <div class="cert-badge blockchain">Blockchain</div>
+                    </div>
+                    <div class="cert-back">
+                        <h3>Hashgraph Developer</h3>
+                        <p>Certified Hashgraph Developer credential. Earned July 2025. Featured certification demonstrating expertise in distributed ledger technology and Hashgraph development. Credential ID: de9e4a86-57c1-43be-98f8-3da1656e56e0.</p>
+                        <div class="cert-date">Issued: July 2025</div>
+                        <a href="#" class="cert-link">View Certificate</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Others Say</h2>
+                <p>Feedback from professors, mentors, and collaborators</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonials-placeholder" data-aos="fade-up">
+                    <div class="placeholder-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Testimonials Coming Soon</h3>
+                    <p>I'm actively gathering feedback from academic mentors, project teammates, and industry collaborators to showcase authentic endorsements of my work. As my portfolio and track record grow, I'll add testimonials from:</p>
+                    <ul class="testimonial-sources">
+                        <li><i class="fas fa-check"></i> Academic advisors and professors</li>
+                        <li><i class="fas fa-check"></i> Project team members</li>
+                        <li><i class="fas fa-check"></i> Club leaders and organizers</li>
+                        <li><i class="fas fa-check"></i> Internship supervisors</li>
+                        <li><i class="fas fa-check"></i> Industry mentors and professionals</li>
+                    </ul>
+                    <p class="placeholder-note">Check back soon! Real testimonials will replace this as I grow my professional network.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Me</h2>
+                <p>Let's work together</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <!-- Integrated with Formspree: set action to your Formspree form endpoint -->
+                    <form id="contactForm" action="https://formspree.io/f/mldpqyoo" method="POST">
+                        <!-- Hidden subject for easier inbox sorting -->
+                        <input type="hidden" name="_subject" value="New message from portfolio contact form">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                    <!-- Google reCAPTCHA placeholder: replace YOUR_SITE_KEY with your site key
+                        and follow Formspree docs to enable reCAPTCHA on your Formspree form. -->
+
+                        <button type="submit" class="btn btn-primary submit-btn">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-spinner" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </span>
+                        </button>
+                    </form>
+                                    <div id="formMessage" class="form-message" role="status" aria-live="polite" style="display: none;"></div>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-cards">
+                        <div class="contact-card">
+                            <div class="card-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Email</h3>
+                                <p>aziz.messaoud@esprit.tn</p>
+                                <a href="mailto:aziz.messaoud@esprit.tn">Send Email</a>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="card-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>LinkedIn</h3>
+                                <p>linkedin.com/in/azizmessaoud</p>
+                                <a href="https://linkedin.com/in/azizmessaoud" target="_blank">View Profile</a>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="card-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>GitHub</h3>
+                                <p>github.com/azizmessaoud</p>
+                                <a href="https://github.com/azizmessaoud" target="_blank">View Repositories</a>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="card-icon">
+                                <i class="fab fa-medium"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Medium</h3>
+                                <p>@aziz.messaoud</p>
+                                <a href="https://medium.com/@aziz.messaoud" target="_blank">Read Articles</a>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="card-icon">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Profiles</h3>
+                                <p>Kaggle · LeetCode · Codeforces · Zindi</p>
+                                <ul style="list-style:none; padding-left:0; margin:0.25rem 0 0 0;">
+                                    <li><a href="https://www.kaggle.com/azizmessaoud2002" target="_blank">Kaggle</a></li>
+                                    <li><a href="https://leetcode.com/u/azizmessaoud/" target="_blank">LeetCode</a></li>
+                                    <li><a href="https://codeforces.com/profile/rebellion2002" target="_blank">Codeforces</a></li>
+                                    <li><a href="https://zindi.africa/users/REBELLION123" target="_blank">Zindi</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="contact-card">
+                            <div class="card-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Location</h3>
+                                <p>Nabeul, Tunisia</p>
+                                <p class="availability">Graduating in 2027 • Open to opportunities</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links-large">
+                        <a href="https://linkedin.com/in/azizmessaoud" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/azizmessaoud" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:aziz.messaoud@esprit.tn" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Aziz Messaoud</h3>
+                    <p>Data Science Engineering Student passionate about AI and machine learning.</p>
+                    <div class="footer-social">
+                        <a href="https://linkedin.com/in/azizmessaoud" target="_blank" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/azizmessaoud" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://medium.com/@aziz.messaoud" target="_blank" aria-label="Medium">
+                            <i class="fab fa-medium"></i>
+                        </a>
+                        <a href="mailto:aziz.messaoud@esprit.tn" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#certifications">Certifications</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Data Analysis</li>
+                        <li>Machine Learning</li>
+                        <li>Web Development</li>
+                        <li>AI Solutions</li>
+                        <li>Consulting</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Aziz Messaoud. All rights reserved.</p>
+            </div>
+        </div>
+        <button id="backToTop" class="back-to-top" style="display: none;">
+            <i class="fas fa-arrow-up"></i>
+        </button>
+    </footer>
+
+    <!-- Theme Toggle -->
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" aria-pressed="false">
+        <i class="fas fa-moon" aria-hidden="true"></i>
+        <i class="fas fa-sun" aria-hidden="true"></i>
+    </button>
+
+    <!-- Scripts -->
+    <!-- Load Typed.js and AOS with defer so they are available before deferred main script executes -->
+    <!-- Google reCAPTCHA (replace YOUR_SITE_KEY in the form with your site key) -->
+<script src="https://www.google.com/recaptcha/api.js?render=6Lfh4vUrAAAAAG6tbqsBDT9ZKcS5hdsI9nVSgI1b"></script>
+<!-- Note: reCAPTCHA client execution removed to ensure contact form is handled by our fetch-based script and does not redirect the user. -->
+    <script defer src="https://unpkg.com/typed.js@2.0.16/lib/typed.umd.js"></script>
+    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script defer src="script.js"></script>
+</body>
+</html>

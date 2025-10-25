@@ -1,0 +1,42 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node (if used)
+node_modules/
+
+# VSCode
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
+
+# Build / temp files
+*.log
+*.tmp
+*.bak
+*~
+
+# MacOS
+.AppleDouble
+.LSOverride
+
+# Windows thumbnail cache
+Thumbs.db
+
+# Editor temporary files
+*.swp
+*.swo
+
+# Ignore local secrets / env
+.env
+.env.local
+
+# Ignore deployment artifacts
+dist/
+build/
+
+# Ignore large media or drafts (adjust as needed)
+assets/drafts/
+assets/tmp/
