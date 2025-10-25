@@ -96,7 +96,6 @@
                     <p class="value-prop">I help organizations unlock the power of data science to make smarter decisions, optimize operations, and drive growth.</p>
                     <div class="hero-buttons">
                         <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-secondary">Let's Connect</a>
                         <a href="assets/cv/Aziz_Messaoud_CV-1.pdf" class="btn btn-outline" target="_blank">Download CV</a>
                     </div>
                 </div>
@@ -106,12 +105,6 @@
                         <div class="profile-glow"></div>
                     </div>
                 </div>
-            </div>
-            <div class="social-links">
-                <a href="https://linkedin.com/in/azizmessaoud" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/azizmessaoud" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://medium.com/@aziz.messaoud" target="_blank" aria-label="Medium"><i class="fab fa-medium"></i></a>
-                <a href="mailto:aziz.messaoud@esprit.tn" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -302,7 +295,7 @@
             </div>
             <div class="projects-grid">
                 <!-- InnoTravel (group project) -->
-                <div class="project-card" data-category="web-development">
+                <div class="project-card" data-category="web-development" data-github="https://github.com/oumaymasaddouri/InnoTravel-PiDev-Symfony.git" data-demo="https://github.com/oumaymasaddouri/InnoTravel-PiDev-Symfony.git">
                     <div class="project-image">
                         <div class="project-icon"><i class="fab fa-github fa-4x" aria-hidden="true"></i></div>
                         <div class="project-overlay" aria-hidden="true">
@@ -328,7 +321,7 @@
                 </div>
 
                 <!-- Smart Nautical Sports Club (group project) -->
-                <div class="project-card" data-category="web-development">
+                <div class="project-card" data-category="web-development" data-github="https://github.com/2A1-CPP-Project-23-24/2a1-smart-nautical-sports-club.git" data-demo="https://github.com/2A1-CPP-Project-23-24/2a1-smart-nautical-sports-club.git">
                     <div class="project-image">
                         <div class="project-icon"><i class="fas fa-ship fa-4x" aria-hidden="true"></i></div>
                         <div class="project-overlay" aria-hidden="true">
@@ -354,7 +347,7 @@
                 </div>
 
                 <!-- ClusterCrew Analytics (single card with two links) -->
-                <div class="project-card" data-category="machine-learning">
+                <div class="project-card" data-category="machine-learning" data-github="https://clustercrew-analytics.onrender.com/" data-demo="https://clustercrew-analytics.onrender.com/">
                     <div class="project-image">
                         <div class="project-icon"><i class="fas fa-chart-line fa-4x" aria-hidden="true"></i></div>
                         <div class="project-overlay" aria-hidden="true">
@@ -530,15 +523,16 @@
             <!-- Certification cards below. Top list removed per user request. -->
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="bi">Business Intelligence (BI)</button>
                 <button class="filter-btn" data-filter="deep-learning">Deep Learning</button>
-                <button class="filter-btn" data-filter="scrum">Scrum</button>
+                <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
                 <button class="filter-btn" data-filter="blockchain">Blockchain</button>
+                <button class="filter-btn" data-filter="scrum">Scrum</button>
+                <button class="filter-btn" data-filter="leadership">Leadership & Communication</button>
             </div>
             <div class="certifications-grid">
                 <!-- New certification cards added -->
                 <div class="cert-card" data-platform="deep-learning">
-                    <div class="cet-front">
+                    <div class="cert-front">
                         <div class="cert-icon"><i class="fas fa-certificate"></i></div>
                         <h3>Introduction to Transformer-Based NLP</h3>
                         <p>NVIDIA</p>
@@ -610,6 +604,67 @@
                         <p>Certified Hashgraph Developer credential. Earned July 2025. Featured certification demonstrating expertise in distributed ledger technology and Hashgraph development. Credential ID: de9e4a86-57c1-43be-98f8-3da1656e56e0.</p>
                         <div class="cert-date">Issued: July 2025</div>
                         <a href="#" class="cert-link">View Certificate</a>
+                    </div>
+                </div>
+
+                <!-- NEW CERTIFICATIONS -->
+                <div class="cert-card" data-platform="machine-learning">
+                    <div class="cert-front">
+                        <div class="cert-icon"><i class="fab fa-kaggle"></i></div>
+                        <h3>Intermediate Machine Learning</h3>
+                        <p>Kaggle</p>
+                        <div class="cert-badge kaggle">Machine Learning</div>
+                    </div>
+                    <div class="cert-back">
+                        <h3>Intermediate Machine Learning</h3>
+                        <p>Advanced ML techniques: missing values, categorical variables, pipelines, cross-validation, XGBoost, data leakage.</p>
+                        <div class="cert-date">Issued: 2025</div>
+                        <a href="https://www.kaggle.com/learn/certification/azizmessaoud2002/intermediate-machine-learning" class="cert-link" target="_blank" rel="noopener">View Certificate</a>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-platform="machine-learning">
+                    <div class="cert-front">
+                        <div class="cert-icon"><i class="fab fa-kaggle"></i></div>
+                        <h3>Intro to Machine Learning</h3>
+                        <p>Kaggle</p>
+                        <div class="cert-badge kaggle">Machine Learning</div>
+                    </div>
+                    <div class="cert-back">
+                        <h3>Intro to Machine Learning</h3>
+                        <p>ML fundamentals: decision trees, random forests, model validation with Python and scikit-learn.</p>
+                        <div class="cert-date">Issued: 2025</div>
+                        <a href="https://www.kaggle.com/learn/certification/azizmessaoud2002/intro-to-machine-learning" class="cert-link" target="_blank" rel="noopener">View Certificate</a>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-platform="machine-learning">
+                    <div class="cert-front">
+                        <div class="cert-icon"><i class="fas fa-robot"></i></div>
+                        <h3>AI Fundamentals with Capstone</h3>
+                        <p>IBM SkillsBuild</p>
+                        <div class="cert-badge ibm">AI</div>
+                    </div>
+                    <div class="cert-back">
+                        <h3>AI Fundamentals with Capstone Project</h3>
+                        <p>Comprehensive AI fundamentals with practical capstone project. Real-world AI application.</p>
+                        <div class="cert-date">Issued: 2025</div>
+                        <a href="https://www.credly.com/badges/211a4060-9485-4b3a-9fb9-e2d53c08e888/" class="cert-link" target="_blank" rel="noopener">View Certificate</a>
+                    </div>
+                </div>
+
+                <div class="cert-card" data-platform="leadership">
+                    <div class="cert-front">
+                        <div class="cert-icon"><i class="fas fa-users"></i></div>
+                        <h3>Connect Global Student Certificate</h3>
+                        <p>Soliya Connect Program</p>
+                        <div class="cert-badge soliya">Leadership</div>
+                    </div>
+                    <div class="cert-back">
+                        <h3>Connect Global Student Certificate</h3>
+                        <p>Cross-cultural communication and global collaboration. Certificate of program completion.</p>
+                        <div class="cert-date">Issued: 2025</div>
+                        <a href="https://eu.badgr.com/public/assertions/FsCTKOvmS4iU4tCAbMtQmQ?identity__email=aziz.messaoud%40esprit.tn" class="cert-link" target="_blank" rel="noopener">View Certificate</a>
                     </div>
                 </div>
                 

@@ -30,8 +30,19 @@ class ParticleNetwork {
         
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
-        this.particleCount = window.innerWidth > 768 ? 50 : 25;
-        this.connectionDistance = 150;
+        
+        // Adjust particle count by device
+        if (window.innerWidth < 768) {
+            this.particleCount = 15;
+            this.connectionDistance = 100;
+        } else if (window.innerWidth < 1024) {
+            this.particleCount = 25;
+            this.connectionDistance = 120;
+        } else {
+            this.particleCount = 50;
+            this.connectionDistance = 150;
+        }
+        
         this.particleRadius = 2;
         this.animationId = null;
         this.isVisible = true;
@@ -262,9 +273,30 @@ function toggleNavbar() {
 }
 
 function toggleMobileMenu() {
+    const isActive = navMenu.classList.contains('active');
+    
     navMenu.classList.toggle('active');
     hamburger.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = isActive ? 'auto' : 'hidden';
 }
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navMenu.classList.contains('active') && 
+        !navMenu.contains(e.target) && 
+        !hamburger.contains(e.target)) {
+        toggleMobileMenu();
+    }
+});
+
+// Close menu on resize to desktop
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && navMenu.classList.contains('active')) {
+        toggleMobileMenu();
+    }
+});
 
 navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
@@ -503,6 +535,8 @@ function openProjectModal(projectCard) {
     const projectStatus = projectCard.querySelector('.project-status').textContent;
     const techTags = projectCard.querySelectorAll('.tech-tags span');
     const projectDetails = projectCard.querySelector('.project-details');
+    const githubLink = projectCard.getAttribute('data-github');
+    const demoLink = projectCard.getAttribute('data-demo');
 
     // Save last focused element
     _lastFocusedElement = document.activeElement;
@@ -526,6 +560,24 @@ function openProjectModal(projectCard) {
         modalDetails.innerHTML = projectDetails.innerHTML;
     } else {
         modalDetails.innerHTML = '<p>No additional details available for this project.</p>';
+    }
+
+    // Set modal links
+    const modalGithub = document.getElementById('modalGithub');
+    const modalLiveDemo = document.getElementById('modalLiveDemo');
+
+    if (githubLink) {
+        modalGithub.href = githubLink;
+        modalGithub.style.display = 'inline-block';
+    } else {
+        modalGithub.style.display = 'none';
+    }
+
+    if (demoLink) {
+        modalLiveDemo.href = demoLink;
+        modalLiveDemo.style.display = 'inline-block';
+    } else {
+        modalLiveDemo.style.display = 'none';
     }
 
     // Show modal
@@ -576,91 +628,61 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Certifications Filtering (multi-select / OR semantics)
+// Certifications Filtering (single-select / OR semantics)
 const certFilterButtons = document.querySelectorAll('.certifications .filter-btn[data-filter]');
 const certCards = document.querySelectorAll('.cert-card');
 
 function showCard(card) {
+    card.classList.remove('fade-out');
+    card.classList.add('fade-in-up');
     card.style.display = 'block';
     setTimeout(() => {
         card.style.opacity = '1';
         card.style.transform = 'scale(1)';
-    }, 100);
+    }, 10);
 }
 
 function hideCard(card) {
+    card.classList.remove('fade-in-up');
+    card.classList.add('fade-out');
     card.style.opacity = '0';
     card.style.transform = 'scale(0.96)';
-    setTimeout(() => { card.style.display = 'none'; }, 250);
+    setTimeout(() => { 
+        card.style.display = 'none'; 
+    }, 250);
 }
 
-function filterCertifications(selectedFilters) {
+function filterCertifications(filterValue) {
     certCards.forEach(card => {
-        const platformAttr = (card.getAttribute('data-platform') || '').toLowerCase();
-        const tags = platformAttr.split(/\s+/).filter(Boolean);
-
-        // No active filters or 'all' -> show everything
-        if (!selectedFilters.length || selectedFilters.includes('all')) {
+        const platform = card.getAttribute('data-platform') || '';
+        
+        // Show all if 'all' is selected
+        if (filterValue === 'all') {
             showCard(card);
-            return;
-        }
-
-        // OR semantics: show if any selected filter matches any tag on the card
-        const matches = selectedFilters.some(f => tags.includes(f));
-        if (matches) showCard(card); else hideCard(card);
-    });
-    
-    // Also filter projects if power-bi is selected (cross-category filtering)
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-        const categoryAttr = (card.getAttribute('data-category') || '').toLowerCase();
-        const tags = categoryAttr.split(/\s+/).filter(Boolean);
-
-        // If no cert filters or 'all', show all projects
-        if (!selectedFilters.length || selectedFilters.includes('all')) {
-            card.style.display = 'block';
-            card.style.opacity = '1';
-            return;
-        }
-
-        // Show project if any selected cert filter matches project categories
-        const matches = selectedFilters.some(f => tags.includes(f));
-        if (matches) {
-            card.style.display = 'block';
-            card.style.opacity = '1';
+        } else if (platform === filterValue) {
+            // Show card if platform matches filter
+            showCard(card);
         } else {
-            card.style.display = 'none';
-            card.style.opacity = '0';
+            // Hide card if it doesn't match
+            hideCard(card);
         }
     });
 }
 
-// Toggle behavior for cert filter buttons
+// Single-select behavior for cert filter buttons
 certFilterButtons.forEach(button => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
         const filter = button.getAttribute('data-filter');
-
-        // If 'all' clicked, clear other selections
-        if (filter === 'all') {
-            certFilterButtons.forEach(b => b.classList.remove('active'));
-            button.classList.add('active');
-            filterCertifications(['all']);
-            return;
-        }
-
-        // Toggle this button
-        button.classList.toggle('active');
-
-        // Ensure 'all' is not active when others are selected
-        const allBtn = document.querySelector('.certifications .filter-btn[data-filter="all"]');
-        if (allBtn) allBtn.classList.remove('active');
-
-        // Build active filters list
-        const active = Array.from(certFilterButtons)
-            .filter(b => b.classList.contains('active') && b.getAttribute('data-filter') !== 'all')
-            .map(b => b.getAttribute('data-filter'));
-
-        filterCertifications(active);
+        
+        // Remove active class from all buttons
+        certFilterButtons.forEach(b => b.classList.remove('active'));
+        
+        // Add active class to clicked button
+        button.classList.add('active');
+        
+        // Filter certifications
+        filterCertifications(filter);
     });
 });
 
@@ -781,14 +803,18 @@ contactForm.addEventListener('submit', async (e) => {
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            const offsetTop = target.offsetTop - 70;
-            window.scrollTo({
-                top: offsetTop,
-                behavior: 'smooth'
-            });
+        const href = this.getAttribute('href');
+        // Only prevent default for internal anchor links, not for modal links
+        if (href === '#' || href.startsWith('#')) {
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                const offsetTop = target.offsetTop - 70;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
         }
     });
 });
@@ -823,46 +849,52 @@ const handleParallax = throttle(() => {
 
 window.addEventListener('scroll', handleParallax, { passive: true });
 
-// Custom cursor (optional enhancement)
-let cursor = document.querySelector('.cursor');
-if (!cursor) {
-    cursor = document.createElement('div');
-    cursor.className = 'cursor';
-    document.body.appendChild(cursor);
+// Custom cursor - Only enable on desktop with fine pointer
+if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    let cursor = document.querySelector('.cursor');
+    if (!cursor) {
+        cursor = document.createElement('div');
+        cursor.className = 'cursor';
+        document.body.appendChild(cursor);
+    }
+    
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
+    }, true);
+
+    document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+    }, true);
+
+    // Add cursor styles dynamically
+    const cursorStyles = `
+    .cursor {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        pointer-events: none;
+        z-index: 9999;
+        transition: opacity 0.3s ease;
+        opacity: 0;
+        mix-blend-mode: difference;
+    }
+    `;
+
+    const style = document.createElement('style');
+    style.textContent = cursorStyles;
+    document.head.appendChild(style);
+} else {
+    // Remove cursor on touch devices
+    const cursor = document.querySelector('.cursor');
+    if (cursor) cursor.remove();
 }
-
-document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
-
-document.addEventListener('mouseenter', () => {
-    cursor.style.opacity = '1';
-}, true);
-
-document.addEventListener('mouseleave', () => {
-    cursor.style.opacity = '0';
-}, true);
-
-// Add cursor styles dynamically
-const cursorStyles = `
-.cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    pointer-events: none;
-    z-index: 9999;
-    transition: opacity 0.3s ease;
-    opacity: 0;
-    mix-blend-mode: difference;
-}
-`;
-
-const style = document.createElement('style');
-style.textContent = cursorStyles;
-document.head.appendChild(style);
 
 // Performance optimization: Lazy loading images
 const images = document.querySelectorAll('img[loading="lazy"]');
