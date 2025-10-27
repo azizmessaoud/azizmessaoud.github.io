@@ -187,6 +187,12 @@ document.addEventListener('DOMContentLoaded', function() {
     new ParticleNetwork('particleCanvas');
 });
 
+// Optional debug switch for development-only logging
+const DEBUG_LOGGING = false;
+const debugLog = (...args) => {
+    if (DEBUG_LOGGING) console.log(...args);
+};
+
 // DOM Elements
 const loadingScreen = document.getElementById('loading-screen');
 const navbar = document.getElementById('navbar');
@@ -197,6 +203,19 @@ const themeToggle = document.getElementById('themeToggle');
 const backToTop = document.getElementById('backToTop');
 const contactForm = document.getElementById('contactForm');
 const formMessage = document.getElementById('formMessage');
+
+// Load reCAPTCHA only on deployed hosts to keep local dev consoles clean
+const recaptchaSiteKey = '6Lfh4vUrAAAAAG6tbqsBDT9ZKcS5hdsI9nVSgI1b';
+const localHosts = new Set(['localhost', '127.0.0.1', '']);
+if (!localHosts.has(window.location.hostname)) {
+    const recaptchaScript = document.createElement('script');
+    recaptchaScript.src = `https://www.google.com/recaptcha/api.js?render=${recaptchaSiteKey}`;
+    recaptchaScript.async = true;
+    recaptchaScript.defer = true;
+    document.head.appendChild(recaptchaScript);
+} else {
+    debugLog('Skipping reCAPTCHA load in local development environment.');
+}
 
 // Optional: configure your Formspree endpoint. If left empty, the script will use the form's `action` attribute.
 // Replace with your Formspree form ID, e.g. 'https://formspree.io/f/abcd1234' or leave blank to use markup.
@@ -944,20 +963,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabButtons = document.querySelectorAll('.tab-btn[data-tab]');
     const tabContents = document.querySelectorAll('.tab-content');
     
-    console.log('Initializing tabs - Tab buttons found:', tabButtons.length);
-    console.log('Initializing tabs - Tab contents found:', tabContents.length);
+    debugLog('Initializing tabs - Tab buttons found:', tabButtons.length);
+    debugLog('Initializing tabs - Tab contents found:', tabContents.length);
     
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
             const tabId = button.getAttribute('data-tab');
-            console.log('Tab clicked:', tabId);
+            debugLog('Tab clicked:', tabId);
             switchTab(tabId);
         });
     });
     
     // Initialize project filtering
     const filterButtons = document.querySelectorAll('.filter-btn[data-filter]');
-    console.log('Initializing filters - Filter buttons found:', filterButtons.length);
+    debugLog('Initializing filters - Filter buttons found:', filterButtons.length);
     
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
@@ -967,7 +986,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Filter projects
             const filter = button.getAttribute('data-filter');
-            console.log('Filter clicked:', filter);
+            debugLog('Filter clicked:', filter);
             filterProjects(filter);
         });
     });
@@ -975,33 +994,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize certification filtering to show all cards by default
     filterCertifications(['all']);
     
-    // Check CV availability and provide fallback if the hosted PDF is missing
-    (function checkCvAvailability() {
-        const cvPath = 'assets/cv/Aziz_Messaoud_CV-1.pdf';
-        const cvLinks = document.querySelectorAll('a[href="' + cvPath + '"]');
-        if (!cvLinks.length) return;
-
-        // Try a HEAD request first; fall back to GET if HEAD is not supported by the host
-        fetch(cvPath, { method: 'HEAD' }).then(res => {
-            if (!res.ok) throw new Error('CV not found');
-            // file exists, nothing to do
-        }).catch(() => {
-            // Replace each link with a mailto fallback and a small badge informing user
-            cvLinks.forEach(link => {
-                const mail = 'mailto:aziz.messaoud@esprit.tn?subject=CV%20Request&body=Hi%20Aziz,%20I%20would%20like%20to%20request%20your%20CV.';
-                const span = document.createElement('span');
-                span.className = 'cv-missing';
-                span.textContent = 'CV (not hosted) — click to request via email';
-                span.style.cursor = 'pointer';
-                span.style.color = '#f8fafc';
-                span.style.background = 'rgba(99,102,241,0.18)';
-                span.style.padding = '6px 10px';
-                span.style.borderRadius = '6px';
-                span.addEventListener('click', () => { window.location.href = mail; });
-
-                link.parentNode.replaceChild(span, link);
-            });
-            console.warn('CV not found at', cvPath, '- replaced Download link(s) with mailto fallback.');
-        });
-    })();
+    // CV is now hosted on Google Drive - no need for local file checks
+    debugLog('CV links point to Google Drive: https://drive.google.com/file/d/194Evas7Gb53EXbZagF6yxcRne-FokIHB/view');
 });
